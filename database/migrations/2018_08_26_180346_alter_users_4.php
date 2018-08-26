@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class AlterUsersTable1 extends Migration
+class AlterUsers4 extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,8 @@ class AlterUsersTable1 extends Migration
     public function up()
     {
         $sql = <<<SQL
-ALTER TABLE users CHANGE namae onamae VARCHAR(255) NOT NULL; 
+ALTER TABLE `users`
+  CHANGE `onamae` `name` varchar(255) NOT NULL COMMENT '';
 SQL;
         DB::statement($sql);
     }
@@ -25,8 +26,10 @@ SQL;
     public function down()
     {
         $sql = <<<SQL
-ALTER TABLE users CHANGE onamae namae VARCHAR(255) NOT NULL; 
+ALTER TABLE `users`
+  CHANGE `name` `onamae` varchar(255) NOT NULL COMMENT '';
 SQL;
         DB::statement($sql);
     }
 }
+
